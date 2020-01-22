@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { AppLoading } from 'expo';
 import { Text, Container, Header, Body, Right, Button, Icon, Title, Tab, Tabs, TabHeading, View } from 'native-base';
 
 import * as Font from 'expo-font';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 import CameraScreen from './screens/CameraScreen';
 import ChatsScreen from './screens/ChatsScreen';
@@ -10,8 +11,7 @@ import StatusScreen from './screens/StatusScreen';
 import CallsScreen from './screens/CallsScreen';
 import { StatusBar } from 'react-native';
 
-export default class App extends Component {
-
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +29,10 @@ export default class App extends Component {
   }
 
   render() {
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+
     return (
       <Container style={{backgroundColor: '#075E54'}}>
         <StatusBar barStyle="light-content" /> 

@@ -17,7 +17,7 @@ export default class ChatsScreen extends Component {
           <List>
             <ListItem avatar>
                 <Left>
-                  <Thumbnail source={{ uri: 'https://specials-images.forbesimg.com/imageserve/5c76b7d331358e35dd2773a9/416x416.jpg?background=000000&cropX1=0&cropX2=4401&cropY1=0&cropY2=4401' }} style={{ width: 55, height: 55, marginBottom: 5 }} />
+                  <Thumbnail source={{ uri: 'https://specials-images.forbesimg.com/imageserve/5c76b7d331358e35dd2773a9/416x416.jpg?background=000000&cropX1=0&cropX2=4401&cropY1=0&cropY2=4401' }} style={{ width: 54, height: 54, marginBottom: 5 }} />
                 </Left>
                 <Body>
                   <Text>Mark Zuckerberg</Text>
@@ -25,7 +25,6 @@ export default class ChatsScreen extends Component {
                 </Body>
                 <Right>
                   <Text note>3:43 PM</Text>
-                  <Button transparent><Icon name="checkmark" color="#0091EA"></Icon></Button>
                 </Right>
             </ListItem>
           </List>
