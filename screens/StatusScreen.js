@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Body, Text, Left, Content, List, ListItem, Thumbnail, Fab, Icon, View, Container, Badge } from 'native-base';
+import { Body, Text, Left, Content, List, ListItem, Thumbnail, Fab, Icon, View, Container, Badge, Button } from 'native-base';
 
 export default class StatusScreen extends Component {
 
@@ -35,7 +35,7 @@ export default class StatusScreen extends Component {
             </ListItem>
             <ListItem avatar>
               <Left>
-                <View style={{borderRadius:50, borderColor: "#075E54", borderWidth: 2.5, padding: 1.5}}>
+                <View style={{borderRadius:50, borderColor: "#075E54", borderStyle:"dashed", borderWidth: 2.5, padding: 1.5}}>
                   <Thumbnail source={{ uri: 'https://specials-images.forbesimg.com/imageserve/5c76b7d331358e35dd2773a9/416x416.jpg?background=000000&cropX1=0&cropX2=4401&cropY1=0&cropY2=4401' }} style={{ width: 50, height: 50}} />
                 </View>
               </Left>
@@ -74,7 +74,7 @@ export default class StatusScreen extends Component {
             </ListItem>
             <ListItem avatar>
               <Left>
-                <View style={{borderRadius:50, borderColor: "#075E54", borderWidth: 2.5, padding: 1.5}}>
+                <View style={{borderRadius:50, borderColor: "#dddddd", borderWidth: 2.5, padding: 1.5}}>
                   <Thumbnail source={{ uri: 'https://static.businessinsider.sg/2019/03/03/5b748ea80ce5f519008b55fa.png' }} style={{ width: 50, height: 50}} />
                 </View>
               </Left>
@@ -83,17 +83,39 @@ export default class StatusScreen extends Component {
               <Text note>42 minutes ago</Text>
               </Body>
             </ListItem>
+            <ListItem avatar>
+              <Left>
+                <View style={{borderRadius:50, borderColor: "#dddddd", borderWidth: 2.5, padding: 1.5}}>
+                  <Thumbnail source={{ uri: 'https://images.wsj.net/im-105325?width=620&size=1.5' }} style={{ width: 50, height: 50}} />
+                </View>
+              </Left>
+              <Body>
+              <Text>Bill Gates</Text>
+              <Text note>30 minutes ago</Text>
+              </Body>
+            </ListItem>
           </List>
         </Content>
-        <Fab
-          active={this.state.active}
-          direction="up"
-          containerStyle={{ }}
-          style={{ backgroundColor: '#075E54' }}
-          position="bottomRight"
-          onPress={() => this.setState({ active: !this.state.active })}>
-          <Icon name="camera" />
-        </Fab>
+        <View style={{flex: 0}}>
+          <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#f4f4f4', marginBottom: 65, width: 47, height: 47 }}
+            position="bottomRight"
+            onPress={() => this.setState({ active: !this.state.active })}>
+            <Icon name="create" style={{color: "#075E54"}} />
+          </Fab>
+          <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#25d366' }}
+            position="bottomRight"
+            onPress={() => this.setState({ active: !this.state.active })}>
+            <Icon name="camera" />
+          </Fab>
+        </View>
       </Container>
     );
   }
